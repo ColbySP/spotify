@@ -4,12 +4,12 @@ import pandas as pd
 import requests
 import spotipy
 
-SONG_TITLE = 'Championships'
+SONG_TITLE = 'ENTER SONG TITLE HERE'
 
 
-username = 'colbysp'
-client_id = 'f4d64e44363c44389692aa7a4a2d8670'
-client_secret = '9aef44307559404b8dae56f7f50eb68d'
+username = 'YOUR SPOTIFY USERNAME'
+client_id = 'YOUR CLIENT ID'
+client_secret = 'YOUR SECRET KEY'
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-recently-played'
 
@@ -52,7 +52,7 @@ def get_features(track_name, token):
 
 
 # load personal data
-df = pd.read_csv('colbySpotifyData/feature_data.csv').set_index('title')
+df = pd.read_csv('feature_data.csv').set_index('title')
 
 # add song in question
 features = get_features(SONG_TITLE, token)
