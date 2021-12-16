@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-PATH = 'colbySpotifyData/history'
+PATH = 'ENTER YOUR PATH HERE'
 json_files = [pos_json for pos_json in os.listdir(PATH) if pos_json.endswith('.json')]
 
 df = pd.DataFrame()
@@ -10,4 +10,4 @@ for file in json_files:
     df = df.append(data)
 
 df = df.sort_index()
-df.to_csv('colbySpotifyData/compiled_data.csv')
+df.to_csv('compiled_data.csv')
