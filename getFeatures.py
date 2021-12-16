@@ -3,9 +3,9 @@ import pandas as pd
 import requests
 import spotipy
 
-username = 'colbysp'
-client_id = 'f4d64e44363c44389692aa7a4a2d8670'
-client_secret = '9aef44307559404b8dae56f7f50eb68d'
+username = 'YOUR SPOTIFY USERNAME'
+client_id = 'YOUR CLIENT ID'
+client_secret = 'YOUR SECRET KEY'
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-recently-played'
 
@@ -46,7 +46,7 @@ def get_features(track_id, token):
         return {}
 
 
-df = pd.read_csv('colbySpotifyData/compiled_data.csv').set_index('endTime')
+df = pd.read_csv('compiled_data.csv').set_index('endTime')
 top_songs = getTopSongs(df, 500).keys()
 
 worked = []
@@ -68,4 +68,4 @@ for song in top_songs:
 
 # convert the index
 feature_df.index = worked
-feature_df.to_csv('colbySpotifyData/feature_data.csv')
+feature_df.to_csv('feature_data.csv')
