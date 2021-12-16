@@ -1,7 +1,5 @@
 import pandas as pd
 
-# df = pd.read_csv('colbySpotifyData/compiled_data.csv').set_index('endTime')
-
 
 def getTotalMinutes(df):
     """
